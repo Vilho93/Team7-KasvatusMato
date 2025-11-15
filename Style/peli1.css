@@ -1,0 +1,38 @@
+body {
+   background-color: #8ed6e5 ;
+   color: black;
+}
+
+.site-header, .site-footer {
+    background-color:#9cec95;
+}
+
+
+.nav {
+    display: flex;
+    flex-wrap:wrap;
+    justify-content: center;
+    list-style: none;
+    gap: 1em;
+    padding: 0;
+    margin: 0;
+}
+
+.nav li a {
+    text-decoration: none;
+    color: black;
+}
+
+.button-link {
+  display: inline-block;
+  padding: 0.5em 1em;
+  background-color: #4CAF50;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  font-weight: bold;}
+
+.footer-nav {
+    display: flex;
+    justify-content: center;
+  }
