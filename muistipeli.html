@@ -1,61 +1,64 @@
 <!DOCTYPE html>
 <html lang="fi">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Muistipeli</title>
-    <script src="./JS/muistipeli.js" defer></script>
-    <link rel="stylesheet" href="./Style/muistipeli.css" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Muistipeli</title>
+  <script src="./JS/muistipeli.js" defer></script>
+  <link rel="stylesheet" href="./Style/muistipeli.css" />
 </head>
 <body>
-     <header class="site-header" role="banner">
+  <header class="site-header" role="banner">
     <div>
-      <span class="site-title">Oppimispelisivusto</span>
+      <span class="site-title">Kasvatusmato</span>
     </div>
     <nav class="main-nav" aria-label="Päävalikko">
-        <ul class="nav">
-            <li><a href="info.html">Info</a></li>
-            <li><a href="matikkapeli.html">Peli 1</a></li>
-            <li><a href="peli2.html">Peli 2</a></li>
-            <li><a href="muistipeli.html">Peli 3</a></li>
-            <li><a href="peli4.html">Peli 4</a></li>
-            <li><a href="peli5.html">Peli 5</a></li>
-            <li><a href="pisteet.html">Pisteet</a></li>
-        </ul>
+      <ul class="nav">
+        <li><a href="info.html">Info</a></li>
+        <li><a href="matikkapeli.html">Matikkapeli</a></li>
+        <li><a href="peli2.html">Peli 2</a></li>
+        <li><a href="muistipeli.html">Muistipeli</a></li>
+        <li><a href="peli4.html">Peli 4</a></li>
+        <li><a href="peli5.html">Peli 5</a></li>
+        <li><a href="pisteet.html">Pisteet</a></li>
+      </ul>
     </nav>
-    </header>
+  </header>
 
-<main id="main" class="hero" role="main">
-  <h1>Muistipeli</h1>
-  <div class="cards">
-    <img id="card1" src="./muistipeli_kuvat/back.png" alt="kortti">
-    <img id="card2" src="./muistipeli_kuvat/back.png" alt="kortti">
-    <img id="card3" src="./muistipeli_kuvat/back.png" alt="kortti">
-    <img id="card4" src="./muistipeli_kuvat/back.png" alt="kortti">
-    <img id="card5" src="./muistipeli_kuvat/back.png" alt="kortti">
-    <img id="card6" src="./muistipeli_kuvat/back.png" alt="kortti">
-    <img id="card7" src="./muistipeli_kuvat/back.png" alt="kortti">
-    <img id="card8" src="./muistipeli_kuvat/back.png" alt="kortti">
-    <img id="card9" src="./muistipeli_kuvat/back.png" alt="kortti">
-    <img id="card10" src="./muistipeli_kuvat/back.png" alt="kortti">
-    <img id="card11" src="./muistipeli_kuvat/back.png" alt="kortti">
-    <img id="card12" src="./muistipeli_kuvat/back.png" alt="kortti">
-    <img id="card13" src="./muistipeli_kuvat/back.png" alt="kortti">
-    <img id="card14" src="./muistipeli_kuvat/back.png" alt="kortti">
-    <img id="card15" src="./muistipeli_kuvat/back.png" alt="kortti">
-    <img id="card16" src="./muistipeli_kuvat/back.png" alt="kortti">
-    <img id="card17" src="./muistipeli_kuvat/back.png" alt="kortti">
-    <img id="card18" src="./muistipeli_kuvat/back.png" alt="kortti">
-    <img id="card19" src="./muistipeli_kuvat/back.png" alt="kortti">
-    <img id="card20" src="./muistipeli_kuvat/back.png" alt="kortti">    
-  </div>
-</main>
+  <main id="main" role="main">
+    <h1>Muistipeli</h1>
+    <p id="intro">Etsi parit mahdollisimman nopeasti.</p>
+    <div id="timer">Aika: 0:00</div>
+    <div class="cards">
+      <!-- 20 korttia -->
+      <img id="card1" src="./muistipeli_kuvat/back.png" alt="kortti">
+      <img id="card2" src="./muistipeli_kuvat/back.png" alt="kortti">
+      <img id="card3" src="./muistipeli_kuvat/back.png" alt="kortti">
+      <img id="card4" src="./muistipeli_kuvat/back.png" alt="kortti">
+      <img id="card5" src="./muistipeli_kuvat/back.png" alt="kortti">
+      <img id="card6" src="./muistipeli_kuvat/back.png" alt="kortti">
+      <img id="card7" src="./muistipeli_kuvat/back.png" alt="kortti">
+      <img id="card8" src="./muistipeli_kuvat/back.png" alt="kortti">
+      <img id="card9" src="./muistipeli_kuvat/back.png" alt="kortti">
+      <img id="card10" src="./muistipeli_kuvat/back.png" alt="kortti">
+      <img id="card11" src="./muistipeli_kuvat/back.png" alt="kortti">
+      <img id="card12" src="./muistipeli_kuvat/back.png" alt="kortti">
+      <img id="card13" src="./muistipeli_kuvat/back.png" alt="kortti">
+      <img id="card14" src="./muistipeli_kuvat/back.png" alt="kortti">
+      <img id="card15" src="./muistipeli_kuvat/back.png" alt="kortti">
+      <img id="card16" src="./muistipeli_kuvat/back.png" alt="kortti">
+      <img id="card17" src="./muistipeli_kuvat/back.png" alt="kortti">
+      <img id="card18" src="./muistipeli_kuvat/back.png" alt="kortti">
+      <img id="card19" src="./muistipeli_kuvat/back.png" alt="kortti">
+      <img id="card20" src="./muistipeli_kuvat/back.png" alt="kortti">
+    </div>
+    <p id="feedback"></p>
+  </main>
 
-    <footer class="site-footer" role="contentinfo">
+  <footer class="site-footer" role="contentinfo">
     <nav class="footer-nav" aria-label="Sivunvaihto">
       <span>Ryhmä 7 • TIK 25 KM</span>
     </nav>
   </footer>
-    
 </body>
 </html>
