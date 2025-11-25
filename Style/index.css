@@ -1,10 +1,26 @@
 body {
    background-color: #8ed6e5 ;
    color: black;
+   font-family: "Comic Sans MS";
 }
+
 
 .site-header, .site-footer {
     background-color:#9cec95;
+    padding-top: 1em;
+    padding-bottom: 1em;
+}
+.site-header div {
+    padding-top: 1em;
+}
+
+
+.site-title {
+    margin-left: 2em;
+    font-size: 1.2em;
+    font-weight: bold;
+    letter-spacing: 0.3em;
+    
 }
 
 
@@ -19,20 +35,69 @@ body {
 }
 
 .nav li a {
+    font-weight: normal;
     text-decoration: none;
     color: black;
 }
+.nav li a:hover {
+    font-weight: bold;
+}
+.button-link:hover {
+    font-weight: bold;
+    background-color: #027206;
+}
+
+
 
 .button-link {
   display: inline-block;
+  margin: 1em;
   padding: 0.5em 1em;
   background-color: #4CAF50;
-  color: white;
+  color: black;
   text-decoration: none;
+  border: 2px solid #027206;
   border-radius: 5px;
-  font-weight: bold;}
+  width: 12em;
+}
+  
+
+footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    
+}
+html, body{
+    margin: 0;
+    padding: 0;
+}
+
+.intro {
+  text-align: center;
+}
+
 
 .footer-nav {
     display: flex;
     justify-content: center;
   }
+
+main {
+    margin-left: 2em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+img {
+    max-width: 80% ;
+    height: auto ;
+}
+
+@media only screen and (max-width:500px) {
+    .hero{
+        flex-direction: column;
+        align-items: center;
+    }
+
+}
