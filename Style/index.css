@@ -42,25 +42,7 @@ body {
 .nav li a:hover {
     font-weight: bold;
 }
-.button-link:hover {
-    font-weight: bold;
-    background-color: #027206;
-}
 
-
-
-.button-link {
-  display: inline-block;
-  margin: 1em;
-  padding: 0.5em 1em;
-  background-color: #4CAF50;
-  color: black;
-  text-decoration: none;
-  border: 2px solid #027206;
-  border-radius: 5px;
-  width: 12em;
-}
-  
 
 footer {
     position: fixed;
@@ -89,13 +71,28 @@ main {
     justify-content: center;
     align-items: center;
 }
-img {
-    max-width: 80% ;
-    height: auto ;
+
+#answers {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
 }
+#answers img {
+    width: 200px;
+    height: auto; 
+    display: block;
+}
+
+
 
 @media only screen and (max-width:500px) {
     .hero{
+        flex-direction: column;
+        align-items: center;
+    }
+@media only screen and (max-width:500px) {
+    #answers {
         flex-direction: column;
         align-items: center;
     }
