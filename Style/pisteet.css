@@ -6,7 +6,7 @@
   flex-wrap: wrap;
 }
 
-.segment {
+.memorySegment {
   width: 40px;
   height: 40px;
   border-radius: 50%;
@@ -15,10 +15,19 @@
   margin-left: -10px;
 }
 
+.mathSegment {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: #ffcc41;
+  border: 2px solid #eebf3c;
+  margin-left: -10px;
+}
+
 
 
 .head {
-  background-color: #8ed6e5;
+  background-color: #028306;
   border: 2px solid #027206;
   position: relative;
   overflow: visible;

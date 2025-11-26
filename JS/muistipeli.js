@@ -128,9 +128,9 @@ function flipCard(event) {
 
     const points = calculatePoints(elapsed);
 
-    sessionStorage.setItem('muistipeliPisteet', points)
+    sessionStorage.setItem('memoryGamePoints', points)
 
-    feedback.textContent = `Voitit pelin ajassa ${minutes}:${seconds.toString().padStart(2, "0")} ja sait ${points} pistettä!`;
+    results.textContent = `Voitit pelin ajassa ${minutes}:${seconds.toString().padStart(2, "0")} ja sait ${points} pistettä!`;
   }
 
 }
