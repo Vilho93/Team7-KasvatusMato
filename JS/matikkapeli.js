@@ -18,10 +18,47 @@ const emojiRounds = [
 ];
 
 document.addEventListener("DOMContentLoaded", () => {
-  const startButton = document.getElementById("start-game");
+  console.log("DOMContentLoaded OK");   // 👈 lisää tämä
 
-  startButton.addEventListener("click", startGame);
-});
+  const startButton = document.getElementById("start-game");
+  if (startButton) {
+    startButton.addEventListener("click", startGame)
+  }
+
+
+
+// Ohje-ikkuna
+  const modal = document.getElementById("instructions-modal");
+  const openBtn = document.getElementById("open-instructions");
+  const closeBtn = document.getElementById("close-instructions");
+
+  console.log({ modal, openBtn, closeBtn });
+
+  if (modal && openBtn && closeBtn) {
+      // Avaa ohje
+      openBtn.addEventListener("click", () => {
+        console.log("Ohje-nappia klikattu");
+        modal.hidden = false;
+        document.body.classList.add("modal-open");
+      });
+
+      // Sulje ohje napista
+      closeBtn.addEventListener("click", () => {
+        console.log("Sulje-nappia klikattu");
+        modal.hidden = true;
+        document.body.classList.remove("modal-open");
+      });        
+    }
+  });
+
+
+
+
+
+
+
+
+
 
 // käynnistää pelin
 function startGame() {
@@ -102,8 +139,6 @@ function newRound() {
   displayEmojis.forEach(e => {
     const el = document.createElement("span");
     el.textContent = e;
-    el.style.fontSize = "80px";
-    el.style.margin = "10px";
     gameArea.appendChild(el);
   });
 
@@ -135,15 +170,22 @@ function newRound() {
 function handleAnswer(selectedNumber) {
   const feedback = document.getElementById("feedback");
   const answersEl = document.getElementById("answers");
+  const buttons = answersEl.querySelectorAll("button");
 
   // Napit disabloidaan, kun on vastattu
-  const buttons = answersEl.querySelectorAll("button");
   buttons.forEach(btn => {
     btn.disabled = true;
+
+  // värit vastaustyypeille
+    if (Number(btn.textContent) === correctNumberForRound) {
+      btn.classList.add("correct"); // oikea vihreäksi
+    } else if (Number(btn.textContent) === selectedNumber) {
+      btn.classList.add("wrong"); // väärä punaiseksi
+    }
   });
 
   if (selectedNumber === correctNumberForRound) {
-    feedback.textContent = "Oikein! 🎉";
+    feedback.textContent = "Oikein! 👍";
     score++;
   } else {
     feedback.textContent = `Väärin 😕 Oikea vastaus olisi ollut ${correctNumberForRound}`;
@@ -162,18 +204,21 @@ function endGame() {
   gameArea.innerHTML = "";
   answersEl.innerHTML = "";
   questionEl.textContent = "Peli päättyi!";
-  feedback.textContent = `Sait ${score} / ${totalRounds} oikein`;
+  feedback.textContent = `Sait ${score} / ${totalRounds} oikein.`;
 
   // Hakee aiemman ennätyksen ja näyttää sen pelin lopussa ja päivittää jos uusi syntyy.
   const previousBest = Number(sessionStorage.getItem("bestScore")) || 0;
   if (score > previousBest) {
     sessionStorage.setItem("bestScore", score);
-    feedback.innerHTML += `Uusi ennätys! 🎉 ${score} pistettä`; 
+    feedback.innerHTML += ` Teit uuden ennätyksen! 🎉`; 
   } else {
-    feedback.innerHTML += `Paras tulos: ${previousBest}`;
+    feedback.innerHTML += `<br><br> Paras tulos: ${previousBest}`;
   }
   
   sessionStorage.setItem("lastScore", score);
-
-
 }
+
+  
+
+
+

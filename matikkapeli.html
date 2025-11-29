@@ -29,6 +29,9 @@
         <section class="intro">
           <h1>Pelataan ja opitaan!</h1>
           <p class="lead">Tervetuloa pelaamaan matikkapeliä!</p>
+
+          <button id="open-instructions" class="button-link">Ohjeet</button>
+
           <button id="start-game" class="button-link">Aloita peli</button>
         </section>
 
@@ -39,9 +42,18 @@
 
           <div id="answers"></div>
           <p id="feedback"></p>
-        </section>
-        
+        </section>    
     </main>
+
+    <div id="instructions-modal" class="modal" hidden>
+      <div class="modal-content">
+        <h2>Ohjeet</h2>
+        <p>Pelissä näet ruudulla erilaisia eläin- emojeja. 
+          Tehtävänäsi on laskea, montako kysymyksessä esitettyä emojia on näkyvissä. 
+          Valitse oikea vastaus vaihtoehdoista.</p>
+          <button id="close-instructions" class="button-link">Sulje</button>
+      </div>
+    </div>
 
     <footer class="site-footer" role="contentinfo">
     <nav class="footer-nav" aria-label="Sivunvaihto">

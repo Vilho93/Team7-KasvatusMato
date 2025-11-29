@@ -23,7 +23,6 @@ body {
     
 }
 
-
 .nav {
     display: flex;
     flex-wrap:wrap;
@@ -46,7 +45,6 @@ body {
     font-weight: bold;
     background-color: #027206;
 }
-
 
 
 .button-link {
@@ -91,23 +89,79 @@ img {
     height: auto ;
 }
 
+/* Pelin sisäiset tyylit */
 .answer-btn {
   font-size: 2rem;
-  padding: 10px;
+  padding: 10px 20px;
   margin: 6px;
   border-radius: 10px;
   border: 3px solid;
   cursor: pointer;
 }
 
-
-
 .answer-btn:hover {
   background-color: #4CAF50;
 }
 
+.answer-btn:disabled,
+.answer-btn:disabled:hover {
+  background-color: #CCCCCC;
+  border-color: #999;
+  opacity: 0.6;
+  cursor: default;
+}
+
+.answer-btn.correct {
+  background-color: #38C172;
+  border-color: #2F9E44;
+  color: white;
+}
+
+.answer-btn.wrong {
+  background-color: #E3342F;
+  border-color: #CC1F1A;
+  color: white;
+}
+
+#game-area span {
+  font-size: 4rem;
+  margin: 6px;
+}
+
+#feedback {
+    font-size: 2rem;
+}
+
+/* Modaali */
+.modal {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(0,0,0,0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal[hidden] {
+  display: none;
+}
+
+.modal-content {
+  background: white;
+  padding: 20px 30px;
+  border-radius: 12px;
+  max-width: 400px;
+  text-align: center;
+  font-family: "Comic Sans MS";
+  border: 3px solid #027206;
+}
+
+body.modal-open {
+  overflow: hidden;
+}
 
 
+/* Pienet näytöt */
 @media only screen and (max-width:500px) {
     .hero{
         flex-direction: column;
