@@ -28,6 +28,7 @@ function setQuestion(){
 }
 
 function imageClicked(event){
+    
     if(event.currentTarget.dataset.answer === answers[index]){
         feedback.textContent = 'Oikea vastaus!';
         feedback.style.color = 'green';
@@ -35,13 +36,15 @@ function imageClicked(event){
         feedback.textContent = 'Väärä vastaus!';
         feedback.style.color = 'red';
     }
-
-    index++;
-    if(index < questions.length){
-        setImages();
-        setQuestion();
-    } else {
-        feedback.textContent = 'Peli loppui!';
-        feedback.style.color = 'blue';
-    }
+    setTimeout(() => {
+        index++;
+        if(index < questions.length){
+            setImages();
+            setQuestion();
+        } else {
+            feedback.textContent = 'Peli loppui!';
+            feedback.style.color = 'blue';
+        }
+    } , 3000);
 }
+
