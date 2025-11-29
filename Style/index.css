@@ -74,10 +74,31 @@ html, body{
 }
 
 
+footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    
+}
+
 .footer-nav {
     display: flex;
     justify-content: center;
   }
+.footer-btn {
+  font-size: 1em;
+  font-family: "Comic Sans MS";
+  background-color: #4CAF50;
+  border: 2px solid #027206;
+  border-radius: 8px; 
+  padding: 0.3em 0.8em;
+  margin: 0.5em;
+}
+
+.footer-btn:hover {
+  font-weight: bold;
+}
+
 
 main {
     margin-left: 2em;

@@ -1,74 +1,89 @@
 #worm {
   display: flex;
+  flex-wrap: wrap; 
   gap: 0.5em;
   margin-top: 2em;
-  justify-content: center;
-  flex-wrap: wrap;
+  align-items: center;
 }
 
-.memorySegment {
-  width: 40px;
-  height: 40px;
+.worm-head {
+  width: 60px;
+  height: 60px;
   border-radius: 50%;
-  background-color: #e9a5da;
-  border: 2px solid #e593da;
-  margin-left: -10px;
-}
-
-.mathSegment {
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  background-color: #ffcc41;
-  border: 2px solid #eebf3c;
-  margin-left: -10px;
-}
-
-
-
-.head {
   background-color: #028306;
   border: 2px solid #027206;
   position: relative;
   overflow: visible;
 }
 
-.head::before,
-.head::after {
+.worm-head::before,
+.worm-head::after {
   content: "";
   position: absolute;
-  top: 8px;
-  width: 8px;
-  height: 8px;
+  top: 12px;
+  width: 10px;
+  height: 10px;
   background-color: white;
   border-radius: 50%;
   border: 1px solid black;
 }
 
-.head::before { left: 8px; }
-.head::after  { right: 8px; }
+.worm-head::before { left: 12px; }
+.worm-head::after  { right: 12px; }
 
-.head .smile {
+.worm-head .smile {
   position: absolute;
-  bottom: 6px;
+  bottom: 10px;
   left: 50%;
   transform: translateX(-50%);
-  width: 14px;
-  height: 7px;
+  width: 18px;
+  height: 9px;
   border-bottom: 2px solid black;
-  border-radius: 0 0 10px 10px;
+  border-radius: 0 0 12px 12px;
 }
 
-.head .antenna {
+.worm-head .antenna {
   position: absolute;
   width: 2px;
-  height: 12px;
+  height: 14px;
   background-color: brown;
-  top: -12px;
+  top: -10px;
 }
 
-.head .antenna.left { left: 10px; }
-.head .antenna.right { right: 10px; }
+.worm-head .antenna.left { left: 14px; }
+.worm-head .antenna.right { right: 14px; }
+
+.worm-body {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  margin-left: -10px;
+}
+
+.peli1Segment {
+  background-color: #e9a5da;
+  border: 2px solid #e593da;
+}
+
+.peli2Segment {
+  background-color: #ffcc41;
+  border: 2px solid #eebf3c;
+}
+
+.peli3Segment {
+  background-color: #41aaff;
+  border: 2px solid #3c8fee;
+}
+
+.peli4Segment {
+  background-color: #ff8841;
+  border: 2px solid #ee7a3c;
+}
+
+.peli5Segment {
+  background-color: #b041ff;
+  border: 2px solid #9a3cee;
+}
 
 body {
    background-color: #8ed6e5 ;
@@ -157,53 +172,13 @@ main {
     align-items: center;
     padding-bottom: 2em;
 }
-img {
-    max-width: 80% ;
-    height: auto ;
-}
 
 
-.cards {
-    display: grid;
-    grid-template-columns: repeat(5, 1fr);
-    grid-template-rows: repeat(4, 1fr);
-    column-gap: 0em;
-    row-gap: 0.5em;
-    max-width: 100%;
-    margin: 1em;
 
-}
-
-.cards img {
-    width: 100%;
-    aspect-ratio: 1/1;
-    object-fit: contain;
-    height: auto;
-    min-width: 50px;
-    min-height: 50px;
-
-}
-
-#timer {
-  font-size: 1.5em;
-  font-weight: bold;
-  margin: 0.5em;
-  padding: 0.3em 0.8em;
-  background-color: #9cec95;
-  border: 2px solid #027206;
-  border-radius: px;
-  font-family: "Comic Sans MS";
-}
-
-#feedback {
-    font-size: 1.2em;
-    font-weight: bold;
-    margin-bottom: 2em;
-}
-
-#intro {
+#intro, #scoreText {
     font-size: 1.2em;
 }
+
 
 @media only screen and (max-width:600px) {
     .cards {

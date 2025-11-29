@@ -1,5 +1,16 @@
 const images = ["one.png", "two.png", "three.png", "four.png", "five.png", "six.png", "seven.png", "eight.png", "nine.png", "ten.png"]
 
+const cardContainer = document.getElementById("cards");
+const totalCards = 20;
+
+for (let i = 1; i <= totalCards; i++) {
+  const card = document.createElement("img");
+  card.id = `card${i}`;
+  card.src = "./peli3_kuvat/back.png";
+  card.alt = "kortti";
+  cardContainer.appendChild(card)
+}
+
 const cards = document.querySelectorAll("img");
 
 const cardState = Array.from({ length: 20 }, (_, i) => ({
@@ -40,8 +51,11 @@ function updateTimer() {
   const elapsed = Math.floor((Date.now() - startTime) / 1000);
   const minutes = Math.floor(elapsed / 60);
   const seconds = elapsed % 60;
-  document.getElementById("timer").textContent =
-    `Aika: ${minutes}:${seconds.toString().padStart(2, "0")}`;
+
+  const points = calculatePoints(elapsed);
+
+  document.getElementById("status").textContent =
+    `Aika: ${minutes}:${seconds.toString().padStart(2, "0")} | Pisteet: ${points}`;
 }
 
 function stopTimer() {
@@ -71,8 +85,8 @@ function checkPair() {
         lockBoard = false
     } else {
         setTimeout(() => {
-            card1.src = "./muistipeli_kuvat/back.png";
-            card2.src = "./muistipeli_kuvat/back.png";
+            card1.src = "./peli3_kuvat/back.png";
+            card2.src = "./peli3_kuvat/back.png";
 
             cardState.forEach(item => {
                 if (item.id === card1.id || item.id === card2.id) {
@@ -103,7 +117,7 @@ function flipCard(event) {
   }
 
   const chosenImage = card.dataset.image;
-  card.src = `./muistipeli_kuvat/${chosenImage}`;
+  card.src = `./peli3_kuvat/${chosenImage}`;
 
   cardState.forEach(item => {
     if (item.id === card.id) {
@@ -128,7 +142,7 @@ function flipCard(event) {
 
     const points = calculatePoints(elapsed);
 
-    sessionStorage.setItem('memoryGamePoints', points)
+    sessionStorage.setItem('peli3Points', points)
 
     results.textContent = `Voitit pelin ajassa ${minutes}:${seconds.toString().padStart(2, "0")} ja sait ${points} pistettä!`;
   }
@@ -140,3 +154,10 @@ cards.forEach(card => {
 });
 
 
+document.getElementById("previousGame").addEventListener("click", () => {
+  window.location.href = "peli2.html";
+});
+
+document.getElementById("nextGame").addEventListener("click", () => {
+  window.location.href = "peli4.html";
+});

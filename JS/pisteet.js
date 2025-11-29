@@ -1,12 +1,18 @@
-const memoryGamePoints = sessionStorage.getItem('memoryGamePoints')
-/*const mathPoints = sessionStorage.getItem('matikkaPisteet')*/ 
+const peli1Points = Number(sessionStorage.getItem('peli1Points'));
+const peli2Points = Number(sessionStorage.getItem('peli2Points'));
+const peli3Points = Number(sessionStorage.getItem('peli3Points'));
+const peli4Points = Number(sessionStorage.getItem('peli4Points'));
+const peli5Points = Number(sessionStorage.getItem('peli5Points'));
+
+
+
 document.getElementById("scoreText").textContent =
-  `Sait ${memoryGamePoints} pistettä muistipelissä`;
+  `Sait ${peli1Points} pistettä 1. pelissä, ${peli2Points} pistettä 2. pelissä, ${peli3Points} pistettä 3. pelissä, ${peli4Points} pistettä 4. pelissä ja ${peli5Points} pistettä 5. pelissä.`;
 
 const wormContainer = document.getElementById("worm");
 
 const head = document.createElement("div");
-head.classList.add("memorySegment", "head");
+head.classList.add("worm-head");
 
 const smile = document.createElement("div");
 smile.classList.add("smile");
@@ -22,16 +28,33 @@ head.appendChild(antennaRight);
 
 wormContainer.appendChild(head);
 
-const memoryBodyCount = Number(memoryGamePoints);
-for (let i = 0; i < memoryBodyCount; i++) {
-  const memorySegment = document.createElement("div");
-  memorySegment.classList.add("memorySegment");
-  wormContainer.appendChild(memorySegment);
+
+for (let i = 0; i < peli1Points; i++) {
+  const seg = document.createElement("div");
+  seg.classList.add("worm-body", "peli1Segment");
+  wormContainer.appendChild(seg);
 }
 
-const mathBodyCount = 8
-for (let i = 0; i < mathBodyCount; i++) {
-  const mathSegment = document.createElement("div");
-  mathSegment.classList.add("mathSegment");
-  wormContainer.appendChild(mathSegment)
+for (let i = 0; i < peli2Points; i++) {
+  const seg = document.createElement("div");
+  seg.classList.add("worm-body", "peli2Segment");
+  wormContainer.appendChild(seg);
+}
+
+for (let i = 0; i < peli3Points; i++) {
+  const seg = document.createElement("div");
+  seg.classList.add("worm-body", "peli3Segment");
+  wormContainer.appendChild(seg);
+}
+
+for (let i = 0; i < peli4Points; i++) {
+  const seg = document.createElement("div");
+  seg.classList.add("worm-body", "peli4Segment");
+  wormContainer.appendChild(seg);
+}
+
+for (let i = 0; i < peli5Points; i++) {
+  const seg = document.createElement("div");
+  seg.classList.add("worm-body", "peli5Segment");
+  wormContainer.appendChild(seg);
 }
