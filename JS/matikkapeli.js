@@ -3,31 +3,30 @@ const totalRounds = 10;
 let currentRound = 0;
 let correctNumberForRound = 0;
 let score = 0;
+let restartBtn;
 
 const emojiRounds = [ 
-    { symbol: "🐴", namePartitive: "HEVOSTA" },
-    { symbol: "🐈‍⬛", namePartitive: "KISSAA" },
-    { symbol: "🦮", namePartitive: "KOIRAA" },
-    { symbol: "🐖", namePartitive: "POSSUA" },
-    { symbol: "🦉", namePartitive: "PÖLLÖÄ" },
-    { symbol: "🐟", namePartitive: "KALAA" },
-    { symbol: "🦖", namePartitive: "DINOSAURUSTA" },
-    { symbol: "🕷️", namePartitive: "HÄMÄHÄKKIÄ" },
-    { symbol: "🐒", namePartitive: "APINAA" },
-    { symbol: "🪰", namePartitive: "KÄRPÄSTÄ" }, 
+    { symbol: "🐴", namePartitive: "hevosta" },
+    { symbol: "🐈‍⬛", namePartitive: "kissaa" },
+    { symbol: "🦮", namePartitive: "koiraa" },
+    { symbol: "🐖", namePartitive: "possua" },
+    { symbol: "🦉", namePartitive: "pöllöä" },
+    { symbol: "🐟", namePartitive: "kalaa" },
+    { symbol: "🦖", namePartitive: "dinosaurusta" },
+    { symbol: "🕷️", namePartitive: "hämähäkkiä" },
+    { symbol: "🐒", namePartitive: "apinaa" },
+    { symbol: "🪰", namePartitive: "kärpästä" }, 
 ];
 
 document.addEventListener("DOMContentLoaded", () => {
-  console.log("DOMContentLoaded OK");   // 👈 lisää tämä
-
   const startButton = document.getElementById("start-game");
-  if (startButton) {
-    startButton.addEventListener("click", startGame)
-  }
+  restartBtn = document.getElementById("restart-game");
+    
+  startButton.addEventListener("click", startGame)
+  restartBtn.addEventListener("click", startGame);
+  
 
-
-
-// Ohje-ikkuna
+// Ohje-modaali
   const modal = document.getElementById("instructions-modal");
   const openBtn = document.getElementById("open-instructions");
   const closeBtn = document.getElementById("close-instructions");
@@ -35,39 +34,27 @@ document.addEventListener("DOMContentLoaded", () => {
   console.log({ modal, openBtn, closeBtn });
 
   if (modal && openBtn && closeBtn) {
-      // Avaa ohje
+      
       openBtn.addEventListener("click", () => {
-        console.log("Ohje-nappia klikattu");
         modal.hidden = false;
         document.body.classList.add("modal-open");
       });
-
-      // Sulje ohje napista
+   
       closeBtn.addEventListener("click", () => {
-        console.log("Sulje-nappia klikattu");
         modal.hidden = true;
         document.body.classList.remove("modal-open");
       });        
     }
   });
 
-
-
-
-
-
-
-
-
-
-// käynnistää pelin
+// Pelin käynistys
 function startGame() {
     const introSection = document.querySelector(".intro");
-    const gameSection = document.getElementById("game");
+    const gameSection = document.getElementById("game"); 
 
-    // Piilottaa intron ja pelisectio tulee näkyviin
     introSection.hidden = true;
     gameSection.hidden = false;
+    restartBtn.hidden = true;
 
     currentRound = 0;
     score = 0;
@@ -103,7 +90,7 @@ function newRound() {
   // Arpoo pääemojien lukumäärän 1–10
   correctNumberForRound = Math.floor(Math.random() * 10) + 1;
 
-  questionEl.textContent = `Montako ${namePartitive} ${symbol} näet?`;
+  questionEl.innerHTML = `Montako ${namePartitive} <span class="question-symbol"> ${symbol}</span> näet?`;
 
   // Valitsee 1 satunnaisen hämäysemojin emojiRounds-listasta
   const otherEmojis = emojiRounds
@@ -178,9 +165,9 @@ function handleAnswer(selectedNumber) {
 
   // värit vastaustyypeille
     if (Number(btn.textContent) === correctNumberForRound) {
-      btn.classList.add("correct"); // oikea vihreäksi
+      btn.classList.add("correct"); 
     } else if (Number(btn.textContent) === selectedNumber) {
-      btn.classList.add("wrong"); // väärä punaiseksi
+      btn.classList.add("wrong"); 
     }
   });
 
@@ -191,7 +178,7 @@ function handleAnswer(selectedNumber) {
     feedback.textContent = `Väärin 😕 Oikea vastaus olisi ollut ${correctNumberForRound}`;
   }
 
-  // muutaman sekunnin viive ja kysymys vaihtuu
+  
   setTimeout(newRound, 3000);
 }
 
@@ -216,6 +203,8 @@ function endGame() {
   }
   
   sessionStorage.setItem("lastScore", score);
+
+  restartBtn.hidden = false;
 }
 
   

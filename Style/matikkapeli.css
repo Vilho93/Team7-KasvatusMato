@@ -57,6 +57,7 @@ body {
   border: 2px solid #027206;
   border-radius: 5px;
   width: 12em;
+  cursor: pointer;
 }
   
 
@@ -77,6 +78,22 @@ html, body{
     justify-content: center;
   }
 
+.footer-link {
+  font-size: 1em;
+  font-family: "Comic Sans MS";
+  background-color: #4CAF50;
+  border: 2px solid #027206;
+  border-radius: 8px;
+  padding: 0.3em 0.8em;
+  margin: 0.5em;
+  text-decoration: none; 
+  color: black;          
+}
+
+.footer-link:hover {
+  font-weight: bold;
+}
+
 main {
     margin-left: 2em;
     display: flex;
@@ -90,6 +107,16 @@ img {
 }
 
 /* Pelin sisäiset tyylit */
+
+#restart-game[hidden] {
+  display: none;
+  cursor: pointer;
+}
+
+.question-symbol {
+  font-size: 3rem;
+}
+
 .answer-btn {
   font-size: 2rem;
   padding: 10px 20px;
@@ -100,7 +127,7 @@ img {
 }
 
 .answer-btn:hover {
-  background-color: #4CAF50;
+  background-color: #8ed6e5;
 }
 
 .answer-btn:disabled,
@@ -113,7 +140,7 @@ img {
 
 .answer-btn.correct {
   background-color: #38C172;
-  border-color: #2F9E44;
+  border-color: #38C172 ;
   color: white;
 }
 
@@ -131,6 +158,7 @@ img {
 #feedback {
     font-size: 2rem;
 }
+
 
 /* Modaali */
 .modal {
