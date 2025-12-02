@@ -1,10 +1,13 @@
 const questions = ['Taso1','Taso2','Taso3','Taso4', 'Taso5' ];
 const answers = ['b','c','a','b','a'];
 let index = 0;
+let score = 0;
 
 const images = document.getElementsByTagName('img');
 const questionHeader = document.getElementById('question');
 const feedback = document.getElementById('feedback');
+const finalScoreElement = document.getElementById("results");
+const scoreboard = document.getElementById("score");
 
 images[0].addEventListener('click', imageClicked);
 images[1].addEventListener('click', imageClicked);
@@ -24,7 +27,7 @@ function setImages(){
 }
 function setQuestion(){
     questionHeader.textContent = questions[index];
-    feedback.textContent = ''; // tyhjennetään palaute uuden kysymyksen alussa
+    feedback.textContent = '';
 }
 
 function imageClicked(event){
@@ -32,6 +35,7 @@ function imageClicked(event){
     if(event.currentTarget.dataset.answer === answers[index]){
         feedback.textContent = 'Oikea vastaus!';
         feedback.style.color = 'green';
+        correctAnswer();
     } else {
         feedback.textContent = 'Väärä vastaus!';
         feedback.style.color = 'red';
@@ -42,9 +46,18 @@ function imageClicked(event){
             setImages();
             setQuestion();
         } else {
-            feedback.textContent = 'Peli loppui!';
-            feedback.style.color = 'blue';
+            endGame();
         }
     } , 3000);
 }
+
+function correctAnswer() {
+  score++;
+}
+function endGame() {
+    feedback.textContent = '';
+  finalScoreElement.textContent = score;
+  scoreboard.classList.remove ("hidden");
+}
+sessionStorage.setItem("peli2Points", score);
 

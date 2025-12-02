@@ -83,11 +83,14 @@ main {
     height: auto; 
     display: block;
 }
+.hidden {
+  display: none;
+}
 
 
 
 @media only screen and (max-width:500px) {
-    .hero{
+    .responsive{
         flex-direction: column;
         align-items: center;
     }
