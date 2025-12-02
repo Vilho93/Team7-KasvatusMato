@@ -68,6 +68,7 @@ html, body{
 main {
     margin-left: 2em;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
 }
@@ -82,11 +83,18 @@ main {
     width: 200px;
     height: auto; 
     display: block;
+    margin: 0 15px;
 }
 .hidden {
   display: none;
 }
-
+#feedback, #score{
+    text-align: center;
+    margin-top: 1.5em;
+}
+#score h2 {
+    margin-bottom: 0.5em ;
+}
 
 
 @media only screen and (max-width:500px) {
