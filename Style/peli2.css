@@ -63,6 +63,7 @@ html, body{
 .footer-nav {
     display: flex;
     justify-content: center;
+    gap: 20px;
   }
 
 main {
@@ -83,7 +84,7 @@ main {
     width: 200px;
     height: auto; 
     display: block;
-    margin: 0 15px;
+    margin: 40px 15px;
 }
 .hidden {
   display: none;
