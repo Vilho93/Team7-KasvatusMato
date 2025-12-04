@@ -1,55 +1,46 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="fi">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Oppimispelisivusto</title>
-  <link rel="stylesheet" href="css/index.css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kasvatusmato</title>
+    <link rel="stylesheet" href="./Style/index.css" />
 </head>
 <body>
-  <a class="skip-link" href="#main">Siirry sisältöön</a>
-
-  <header class="site-header" role="banner">
-    <div class="brand">
-      <span class="site-title">Oppimispelisivusto</span>
+     <header class="site-header" role="banner">
+    <div>
+      <span class="site-title">Kasvatusmato</span>
     </div>
-
     <nav class="main-nav" aria-label="Päävalikko">
-      <a href="info.html">Info</a>
-      <a href="peli1.html">Peli 1</a>
-      <a href="peli2.html">Peli 2</a>
-      <a href="peli3.html">Peli 3</a>
-      <a href="peli4.html">Peli 4</a>
-      <a href="peli5.html">Peli 5</a>
+        <ul class="nav">
+            <li><a href="infosivu.html">Info</a></li>
+            <li><a href="peli1.html">Peli 1</a></li>
+            <li><a href="peli2.html">Peli 2</a></li>
+            <li><a href="peli3.html">Peli 3</a></li>
+            <li><a href="peli4.html">Peli 4</a></li>
+            <li><a href="peli5.html">Peli 5</a></li>
+            <li><a href="pisteet.html">Pisteet</a></li>
+        </ul>
     </nav>
+    </header>
 
-    <div class="user" aria-label="Käyttäjän tiedot">
-      <span class="username">Käyttäjä: <strong>Vierailija</strong></span>
-      <span class="score" aria-live="polite">Pisteet: <strong>0</strong></span>
-      <button class="sound" aria-pressed="false" aria-label="Äänet päälle/pois">
-        <img src="assets/icons/speaker.svg" alt="" />
-      </button>
-    </div>
-  </header>
+    <main id="main" class="hero" role="main">
+        <section class="intro">
+        <h1>Pelataan ja opitaan!</h1>
+        <p class="lead">Valitse peli ylhäältä tai aloita tästä.</p>
+        <a href="" class="button-link">Aloita peli</a>
+        </section>
 
-  <main id="main" class="hero" role="main">
-    <section class="intro">
-      <h1>Pelataan ja opitaan!</h1>
-      <p class="lead">Valitse peli ylhäältä tai aloita tästä.</p>
-      <button class="cta" type="button">Aloita</button>
-    </section>
+        <figure class="mascot">
+        <img src="./Images/mato.avif" alt="Iloinen vihreä toukka" />
+        </figure>
+    </main>
 
-    <figure class="mascot">
-      <img src="//**Ei vielä//" alt="Iloinen vihreä toukka" />
-    </figure>
-  </main>
-
-  <footer class="site-footer" role="contentinfo">
+    <footer class="site-footer" role="contentinfo">
     <nav class="footer-nav" aria-label="Sivunvaihto">
-      <button type="button">Edellinen peli</button>
       <span>Ryhmä 7 • TIK 25 KM</span>
-      <button type="button">Seuraava peli</button>
     </nav>
   </footer>
+    
 </body>
 </html>
