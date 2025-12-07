@@ -1,0 +1,113 @@
+body {
+   background-color: #8ed6e5 ;
+   color: black;
+   font-family: "Comic Sans MS";
+}
+
+
+.site-header, .site-footer {
+    background-color:#9cec95;
+    padding-top: 1em;
+    padding-bottom: 1em;
+}
+.site-header div {
+    padding-top: 1em;
+}
+
+
+.site-title {
+    margin-left: 2em;
+    font-size: 1.2em;
+    font-weight: bold;
+    letter-spacing: 0.3em;
+    
+}
+
+
+.nav {
+    display: flex;
+    flex-wrap:wrap;
+    justify-content: center;
+    list-style: none;
+    gap: 1em;
+    padding: 0;
+    margin: 0;
+}
+
+.nav li a {
+    font-weight: normal;
+    text-decoration: none;
+    color: black;
+}
+.nav li a:hover {
+    font-weight: bold;
+}
+
+
+footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    
+}
+html, body{
+    margin: 0;
+    padding: 0;
+}
+
+.intro {
+  text-align: center;
+}
+
+
+.footer-nav {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+  }
+
+main {
+    margin-left: 2em;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#answers {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+#answers img {
+    width: 200px;
+    height: auto; 
+    display: block;
+    margin: 40px 15px;
+}
+.hidden {
+  display: none;
+}
+#feedback, #score{
+    text-align: center;
+    margin-top: 1.5em;
+}
+#score h2 {
+    margin-bottom: 0.5em ;
+}
+
+
+@media only screen and (max-width:500px) {
+    .responsive{
+        flex-direction: column;
+        align-items: center;
+    }
+}
+@media only screen and (max-width:500px) {
+    #answers {
+        flex-direction: column;
+        align-items: center;
+    }
+
+}
