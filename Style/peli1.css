@@ -1,0 +1,224 @@
+body {
+   background-color: #8ed6e5 ;
+   color: black;
+   font-family: "Comic Sans MS";
+}
+
+
+.site-header, .site-footer {
+    background-color:#9cec95;
+    padding-top: 1em;
+    padding-bottom: 1em;
+}
+.site-header div {
+    padding-top: 1em;
+}
+
+
+.site-title {
+    margin-left: 2em;
+    font-size: 1.2em;
+    font-weight: bold;
+    letter-spacing: 0.3em;
+    
+}
+
+.nav {
+    display: flex;
+    flex-wrap:wrap;
+    justify-content: center;
+    list-style: none;
+    gap: 1em;
+    padding: 0;
+    margin: 0;
+}
+
+.nav li a {
+    font-weight: normal;
+    text-decoration: none;
+    color: black;
+}
+.nav li a:hover {
+    font-weight: bold;
+}
+.button-link:hover {
+    font-weight: bold;
+    background-color: #027206;
+}
+
+.button-link {
+  font-family: "Comic Sans MS";
+  font-size: 1em;
+  display: inline-block;
+  margin: 0.5em;
+  padding: 0.3em 0.8em;
+  background-color: #4CAF50;
+  color: black;
+  text-decoration: none;
+  border: 2px solid #027206;
+  border-radius: 8px;
+  width: 10em;
+  cursor: pointer;
+}
+  
+footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    
+}
+html, body{
+    margin: 0;
+    padding: 0;
+}
+
+
+.footer-nav {
+    display: flex;
+    justify-content: center;
+  }
+
+.footer-link {
+  font-size: 1em;
+  font-family: "Comic Sans MS";
+  background-color: #4CAF50;
+  border: 2px solid #027206;
+  border-radius: 8px;
+  padding: 0.3em 0.8em;
+  margin: 0.5em;
+  text-decoration: none; 
+  color: black;          
+}
+
+.footer-link:hover {
+  font-weight: bold;
+}
+
+main {
+    margin-left: 2em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+img {
+    max-width: 80% ;
+    height: auto ;
+}
+
+/* Pelin sisäiset tyylit */
+
+#restart-game[hidden] {
+  display: none;
+  cursor: pointer;
+}
+
+.question-symbol {
+  font-size: 3rem;
+}
+
+.answer-btn {
+  font-size: 2rem;
+  padding: 10px 20px;
+  margin: 6px;
+  border-radius: 10px;
+  border: 3px solid;
+  cursor: pointer;
+}
+
+.answer-btn:hover {
+  background-color: #8ed6e5;
+}
+
+.answer-btn:disabled,
+.answer-btn:disabled:hover {
+  background-color: #CCCCCC;
+  border-color: #999;
+  opacity: 0.6;
+  cursor: default;
+}
+
+.answer-btn.correct {
+  background-color: #38C172;
+  border-color: #38C172 ;
+  color: white;
+}
+
+.answer-btn.wrong {
+  background-color: #E3342F;
+  border-color: #CC1F1A;
+  color: white;
+}
+
+#game-area{
+  background-color: white;
+}
+
+#game-area span {
+  font-size: 4rem;
+  margin: 6px;
+}
+
+#feedback {
+    font-size: 2rem;
+}
+
+/* Modaali */
+.modal {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(0,0,0,0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal[hidden] {
+  display: none;
+}
+
+.modal-content {
+  background: white;
+  padding: 20px 30px;
+  border-radius: 12px;
+  max-width: 400px;
+  text-align: center;
+  font-family: "Comic Sans MS";
+  border: 3px solid #027206;
+}
+
+body.modal-open {
+  overflow: hidden;
+}
+
+
+/* Pienet näytöt */
+@media only screen and (max-width:500px) {
+  .hero{
+      flex-direction: column;
+      align-items: center;
+      margin-left: 0;
+      padding: 1rem;
+  }
+  #question {
+    font-size: 1.2rem;
+    text-align: center;
+    margin: 0.5em 0;
+  }  
+  #game-area span {
+    font-size: 2.4rem;   
+    margin: 4px;
+  }
+  .answer-btn {
+    font-size: 1.4rem;
+    padding: 8px 12px;
+    margin: 4px;
+    min-width: 56px;
+  }
+  .button-link {
+    width: auto;
+    padding: 0.4em 0.8em;
+    font-size: 1rem;
+    margin: 0.4em;
+  }
+}

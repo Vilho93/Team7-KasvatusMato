@@ -1,0 +1,155 @@
+body {
+  background-color: #8ed6e5;
+  color: black;
+  font-family: "Comic Sans MS";
+  margin: 0;
+  padding: 0;
+}
+
+
+.site-header, .site-footer {
+  background-color: #9cec95;
+  padding: 1em 0;
+}
+
+.site-title {
+  margin-left: 2em;
+  font-size: 1.2em;
+  font-weight: bold;
+  letter-spacing: 0.3em;
+}
+
+
+.nav {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  list-style: none;
+  gap: 1em;
+  padding: 0;
+  margin: 0;
+}
+
+.nav li a {
+  text-decoration: none;
+  color: black;
+}
+
+.nav li a:hover {
+    font-weight: bold;
+}
+
+.button-link {
+  display: inline-block;
+  margin: 1em;
+  padding: 0.5em 1em;
+  background-color: #4CAF50;
+  color: black;
+  text-decoration: none;
+  border: 2px solid #027206;
+  border-radius: 5px;
+  width: 12em;
+}
+
+.button-link:hover {
+    font-weight: bold;
+    background-color: #027206;
+}
+  
+
+footer {
+  position:fixed;
+  bottom: 0;
+  width: 100%;  
+}
+
+.footer-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 1em;
+}
+
+.footer-link {
+  font-size: 1em;
+  font-family: "Comic Sans MS";
+  background-color: #4CAF50;
+  border: 2px solid #027206;
+  border-radius: 8px;
+  padding: 0.3em 0.8em;
+  margin: 0.5em;
+  text-decoration: none; 
+  color: black;          
+}
+
+.footer-link:hover {
+  font-weight: bold;
+}
+
+
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-bottom: 6em;
+  min-height: calc(100vh - 6em);
+  box-sizing: border-box;
+}
+
+img {
+    max-width: 80% ;
+    height: auto ;
+}
+
+
+.cards {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: repeat(4, 1fr);
+    gap: 0.6em;
+    max-width: 90vw;
+    max-height: 90vh;
+    margin: auto;
+    box-sizing: border-box;
+
+}
+
+.cards img {
+    width: 100%;
+    aspect-ratio: 1/1;
+    object-fit: contain;
+    border-radius: 8px;
+    box-shadow: 0 0 4px rgba(0, 0, 0, 0.2);
+
+}
+
+#status {
+  font-size: 1.3em;
+  font-weight: bold;
+  margin: 0.5em;
+  padding: 0.3em 0.8em;
+  background-color: #9cec95;
+  border: 2px solid #027206;
+  border-radius: 8px;
+  font-family: "Comic Sans MS";
+}
+
+#results {
+    font-size: 1.2em;
+    font-weight: bold;
+    margin-top: 1em;
+    margin-bottom: 1em;
+}
+
+#intro {
+    font-size: 1.2em;
+}
+
+@media only screen and (max-width:600px) {
+    .cards {
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: repeat(5, 1fr); 
+        gap: 0.5em; 
+        margin-left: 1em;                           
+  }
+}
