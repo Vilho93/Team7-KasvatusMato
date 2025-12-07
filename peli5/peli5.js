@@ -6,11 +6,29 @@ const correctOrder = Array.from({ length: rows * columns }, (_, i) => rows * col
 
 var selectedTile = null;
 var turns = 0;
-var score = 10; // maksimi pisteet
+var score = 10; // maksimi
 
 var imgOrder = ["19", "4", "17", "10", "20", "18", "2", "11", "12", "8", "21", "5", "22", "15", "1", "6", "13","23", "7", "3", "24", "14", "16", "25", "9"];
 
 window.onload = function() {
+  const modal = document.getElementById("instructions-modal"); 
+  const openBtn = document.getElementById("open-instructions"); 
+  const closeBtn = document.getElementById("close-instructions"); 
+
+  console.log({ modal, openBtn, closeBtn }); 
+
+  if (modal && openBtn && closeBtn) { 
+      openBtn.addEventListener("click", () => { 
+        modal.hidden = false; 
+        document.body.classList.add("modal-open"); 
+      }); 
+
+      closeBtn.addEventListener("click", () => { 
+        modal.hidden = true; 
+        document.body.classList.remove("modal-open"); 
+      });         
+
+    }
   const board = document.getElementById("board");
 
   for (let r = 0; r < rows; r++) {
@@ -63,8 +81,7 @@ function onTileClick() {
 
   if (checkWin()) {
     sessionStorage.setItem('peli5_score', String(score));
-
-    alert(`Voitit pelin ${turns} siirrolla! Pisteesi: ${score}/10`);
+    openWinDialog(turns, score);
   }
 }
 
@@ -98,3 +115,94 @@ function checkWin() {
   }
   return true;
 }
+
+let lastFocusedBeforeDialog = null;
+
+function openWinDialog(turns, score) {
+  const dialog = document.getElementById("win-dialog");
+  const msgEl = document.getElementById("win-message");
+  const restartBtn = document.getElementById("win-restart");
+  const closeBtn = document.getElementById("win-close");
+
+  if (!dialog || !msgEl || !restartBtn || !closeBtn) {
+    console.warn("Voittodialogin elementtejä ei löytynyt.");
+    return;
+  }
+
+  msgEl.textContent = `Onneksi olkoon. Ratkaisit palapelin ${turns} siirrolla! Pisteesi: ${score}/10.`;
+
+  lastFocusedBeforeDialog = document.activeElement;
+
+  dialog.classList.remove("is-hidden");
+  document.body.classList.add("modal-open");
+
+  restartBtn.focus();
+
+  restartBtn.onclick = () => {
+    closeWinDialog();
+    resetGame();
+  };
+  closeBtn.onclick = () => closeWinDialog();
+
+  dialog.onkeydown = (e) => {
+    if (e.key === "Escape") { e.preventDefault(); closeWinDialog(); }
+  };
+
+  trapFocus(dialog);
+}
+
+function closeWinDialog() {
+  const dialog = document.getElementById("win-dialog");
+  if (!dialog) return;
+  dialog.classList.add("is-hidden");
+  document.body.classList.remove("modal-open");
+
+  if (lastFocusedBeforeDialog && typeof lastFocusedBeforeDialog.focus === "function") {
+    lastFocusedBeforeDialog.focus();
+  }
+}
+
+function trapFocus(container) {
+  const focusable = container.querySelectorAll(
+    'button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])'
+  );
+  if (focusable.length === 0) return;
+  const first = focusable[0];
+  const last = focusable[focusable.length - 1];
+
+  container.addEventListener("keydown", (e) => {
+    if (e.key !== "Tab") return;
+    if (e.shiftKey) {
+      if (document.activeElement === first) {
+        e.preventDefault();
+        last.focus();
+      }
+    } else {
+      if (document.activeElement === last) {
+        e.preventDefault();
+        first.focus();
+      }
+    }
+  });
+}
+
+function resetGame() {
+  turns = 0;
+  score = 10;
+  document.getElementById("turns").innerText = turns;
+  document.getElementById("score").innerText = score;
+
+  const total = rows * columns;
+  const newOrder = Array.from({ length: total }, (_, i) => String(i + 1));
+  for (let i = newOrder.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [newOrder[i], newOrder[j]] = [newOrder[j], newOrder[i]];
+  }
+
+  const tiles = document.querySelectorAll("#board img");
+  tiles.forEach((tile, idx) => {
+    tile.src = "peli5_images/" + newOrder[idx] + ".png";
+    tile.alt = `Pala ${newOrder[idx]}`;
+  });
+}
+
