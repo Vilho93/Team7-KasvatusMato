@@ -40,12 +40,16 @@ function checkAnswer(selectedName, imgElement) {
     const allImages = document.querySelectorAll(".shape-img");
     
     if (selectedName === currentShape.name) {
-        score++;
-        document.getElementById("score").textContent = score;
-        document.getElementById("message").textContent = "Oikein! 🎉";
-        document.getElementById("message").className = "message correct";
-        imgElement.classList.add("correct");
-    } else {
+    score++;
+    document.getElementById("score").textContent = score;
+
+    sessionStorage.setItem('peli4Points', score);
+
+    document.getElementById("message").textContent = "Oikein! 🎉";
+    document.getElementById("message").className = "message correct";
+    imgElement.classList.add("correct");
+} else {
+
         document.getElementById("message").textContent = "Väärin! 😔";
         document.getElementById("message").className = "message wrong";
         imgElement.classList.add("wrong");
