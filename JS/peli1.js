@@ -195,7 +195,7 @@ function endGame() {
     feedback.innerHTML += `<br><br> Paras tulos: ${previousBest}`;
   }
   
-  sessionStorage.setItem("lastScore", score);
+  sessionStorage.setItem("peli1Points", score);
 
   restartBtn.hidden = false;
 }
