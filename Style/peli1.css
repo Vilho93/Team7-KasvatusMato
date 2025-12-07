@@ -46,21 +46,21 @@ body {
     background-color: #027206;
 }
 
-
 .button-link {
+  font-family: "Comic Sans MS";
+  font-size: 1em;
   display: inline-block;
-  margin: 1em;
-  padding: 0.5em 1em;
+  margin: 0.5em;
+  padding: 0.3em 0.8em;
   background-color: #4CAF50;
   color: black;
   text-decoration: none;
   border: 2px solid #027206;
-  border-radius: 5px;
-  width: 12em;
+  border-radius: 8px;
+  width: 10em;
   cursor: pointer;
 }
   
-
 footer {
     position: fixed;
     bottom: 0;
@@ -150,6 +150,10 @@ img {
   color: white;
 }
 
+#game-area{
+  background-color: white;
+}
+
 #game-area span {
   font-size: 4rem;
   margin: 6px;
@@ -158,7 +162,6 @@ img {
 #feedback {
     font-size: 2rem;
 }
-
 
 /* Modaali */
 .modal {
@@ -191,9 +194,31 @@ body.modal-open {
 
 /* Pienet näytöt */
 @media only screen and (max-width:500px) {
-    .hero{
-        flex-direction: column;
-        align-items: center;
-    }
-
+  .hero{
+      flex-direction: column;
+      align-items: center;
+      margin-left: 0;
+      padding: 1rem;
+  }
+  #question {
+    font-size: 1.2rem;
+    text-align: center;
+    margin: 0.5em 0;
+  }  
+  #game-area span {
+    font-size: 2.4rem;   
+    margin: 4px;
+  }
+  .answer-btn {
+    font-size: 1.4rem;
+    padding: 8px 12px;
+    margin: 4px;
+    min-width: 56px;
+  }
+  .button-link {
+    width: auto;
+    padding: 0.4em 0.8em;
+    font-size: 1rem;
+    margin: 0.4em;
+  }
 }

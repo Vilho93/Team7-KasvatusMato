@@ -62,7 +62,7 @@ function startGame() {
     newRound();
 }
 
-// luo uuden tehtävän
+
 function newRound() {
   currentRound++;
 
@@ -77,7 +77,7 @@ function newRound() {
   const answersEl = document.getElementById("answers");
   const questionEl = document.getElementById("question");
   
-  // tyhjentää edellisen kierroksen
+  
   gameArea.innerHTML = "";
   feedback.textContent = "";
   answersEl.innerHTML = "";
@@ -87,31 +87,27 @@ function newRound() {
   const symbol = roundData.symbol;
   const namePartitive = roundData.namePartitive;
 
-  // Arpoo pääemojien lukumäärän 1–10
+  
   correctNumberForRound = Math.floor(Math.random() * 10) + 1;
 
   questionEl.innerHTML = `Montako ${namePartitive} <span class="question-symbol"> ${symbol}</span> näet?`;
 
-  // Valitsee 1 satunnaisen hämäysemojin emojiRounds-listasta
+  // hämäysemoji
   const otherEmojis = emojiRounds
     .map(e => e.symbol)
     .filter(e => e !== symbol);
 
   const distractorSymbol =
     otherEmojis[Math.floor(Math.random() * otherEmojis.length)];
-
-  // Arpoo hämäysemojien määrän  
+    
   const distractorCount = Math.floor(Math.random() * 8) + 1;
-
-  // Kerää taulukon kaikista näytettävistä emojista
+  
   const displayEmojis = [];
-
-  // pääemojit jotka lasketaan
+  
   for (let i = 0; i < correctNumberForRound; i++) {
     displayEmojis.push(symbol);
   }
 
-  // yksi hämääjäemoji, monta kappaletta
   for (let i = 0; i < distractorCount; i++) {
     displayEmojis.push(distractorSymbol);
   }
@@ -122,18 +118,17 @@ function newRound() {
     [displayEmojis[i], displayEmojis[j]] = [displayEmojis[j], displayEmojis[i]];
   }
 
-  // Piirtää emojit ruudulle
+  
   displayEmojis.forEach(e => {
     const el = document.createElement("span");
     el.textContent = e;
     gameArea.appendChild(el);
   });
 
-  // vastausnapit
+  // vastausnapit joihin 2 väärää vaihtoehtoa.
   const options = new Set();
   options.add(correctNumberForRound);
 
-// arvotaan muita vaihtoehtoja väliltä 1–10
   while (options.size < 3) {
     const candidate = Math.floor(Math.random() * 10) + 1; 
     if (candidate !== correctNumberForRound) {
@@ -159,11 +154,9 @@ function handleAnswer(selectedNumber) {
   const answersEl = document.getElementById("answers");
   const buttons = answersEl.querySelectorAll("button");
 
-  // Napit disabloidaan, kun on vastattu
   buttons.forEach(btn => {
     btn.disabled = true;
 
-  // värit vastaustyypeille
     if (Number(btn.textContent) === correctNumberForRound) {
       btn.classList.add("correct"); 
     } else if (Number(btn.textContent) === selectedNumber) {
@@ -177,11 +170,11 @@ function handleAnswer(selectedNumber) {
   } else {
     feedback.textContent = `Väärin 😕 Oikea vastaus olisi ollut ${correctNumberForRound}`;
   }
-
   
   setTimeout(newRound, 3000);
 }
 
+// Pelin lopetus
 function endGame() {
   const gameArea = document.getElementById("game-area");
   const feedback = document.getElementById("feedback");
