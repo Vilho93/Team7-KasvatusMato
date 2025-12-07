@@ -18,7 +18,7 @@ window.onload = function() {
       const tile = document.createElement("img");
       tile.id = `${r}-${c}`;
       tile.src = "peli5_images/" + imgOrder.shift() + ".png";
-      tile.alt = "Palapala";
+      tile.alt = "Pala";
 
       tile.setAttribute("role", "button");
       tile.setAttribute("tabindex", "0");
@@ -55,7 +55,6 @@ function onTileClick() {
   turns += 1;
   document.getElementById("turns").innerText = turns;
 
-  // Laske pisteet porrastetusti
   score = calculateScore(turns);
   document.getElementById("score").innerText = score;
 
@@ -63,6 +62,8 @@ function onTileClick() {
   selectedTile = null;
 
   if (checkWin()) {
+    sessionStorage.setItem('peli5_score', String(score));
+
     alert(`Voitit pelin ${turns} siirrolla! Pisteesi: ${score}/10`);
   }
 }
@@ -90,7 +91,7 @@ function calculateScore(turns) {
 function checkWin() {
   const tiles = document.querySelectorAll("#board img");
   for (let i = 0; i < tiles.length; i++) {
-    const fileName = tiles[i].src.split("/").pop(); // esim. "1.png"
+    const fileName = tiles[i].src.split("/").pop(); 
     if (fileName !== correctOrder[i] + ".png") {
       return false;
     }
