@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="fi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Oppimispelisivusto</title>
+    <script src="./JS/peli2.js" defer></script>
+    <link rel="stylesheet" href="./Style/peli2.css" />
+</head>
+<body>
+     <header class="site-header" role="banner">
+    <div>
+      <span class="site-title">Oppimispelisivusto</span>
+    </div>
+    <nav class="main-nav" aria-label="Päävalikko">
+        <ul class="nav">
+            <li><a href="info.html">Info</a></li>
+            <li><a href="matikkapeli.html">Peli 1</a></li>
+            <li><a href="index2.html">Etusivu</a></li>
+            <li><a href="peli3.html">Peli 3</a></li>
+            <li><a href="peli4.html">Peli 4</a></li>
+            <li><a href="peli5.html">Peli 5</a></li>
+            <li><a href="pisteet.html">Pisteet</a></li>
+        </ul>
+    </nav>
+    </header>
+
+    <main id="main" class="responsive" role="main">
+        <section class="intro">
+        <h1>Mikä kuva ei kuulu joukkoon?</h1>
+        <h2 id="question"></h2>
+        </section>
+        <div id="answers">
+            <img name="a">
+            <img name="b">
+            <img name="c">
+        </div>
+        <div id="feedback"></div>
+        <div id="score" class="hidden">
+          <h2>Peli päättyi!</h2>
+          <p>Sait <span id="results">0</span> / 5 oikein!</p>
+        </div>
+
+    </main>
+
+    <footer class="site-footer" role="contentinfo">
+    <nav class="footer-nav" aria-label="Sivunvaihto">
+      
+      <a href="peli1.html" class="footer-link">Edellinen peli</a>
+      <span>Ryhmä 7 • TIK 25 KM</span>
+      <a href="peli3.html" class="footer-link">Seuraava peli</a>
+    </nav>
+  </footer>
+    
+</body>
+</html>
