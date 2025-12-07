@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="fi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Muotopeli</title>
+    <link rel="stylesheet" href="/Style/peli4.css"/>
+</head>
+<body>
+  <header class="site-header" role="banner">
+    <div>
+      <span class="site-title">Kasvatusmato</span>
+    </div>
+    <nav class="main-nav" aria-label="Päävalikko">
+      <ul class="nav">
+        <li><a href="index2.html">Etusivu</a></li>
+        <li><a href="info.html">Info</a></li>
+        <li><a href="peli1.html">Peli 1</a></li>
+        <li><a href="peli2.html">Peli 2</a></li>
+        <li><a href="peli3.html">Peli 3</a></li>
+        <li><a href="peli4.html">Peli 4</a></li>
+        <li><a href="peli5.html">Peli 5</a></li>
+        <li><a href="pisteet.html">Pisteet</a></li>
+      </ul>
+    </nav>
+  </header>
+  <div class="container">
+        <h1>Muotopeli</h1>
+        
+        <div class="score-board">
+            <p>Pisteet: <span id="score">0</span></p>
+        </div>
+        
+        <div class="question-section">
+            <h2>Etsi <span id="shape-name">Circle</span></h2>
+        </div>
+        
+        <div class="shapes-container" id="shapes-container">
+
+        </div>
+        
+        <div class="message" id="message"></div>
+        
+         <button class="next-btn" id="next-btn" style="display: none;">Seuraava muoto →</button>
+    </div>
+    
+    <script src="JS/peli4.js"></script>
+
+    <footer class="site-footer" role="contentinfo">
+    <nav class="footer-nav" aria-label="Sivunvaihto">
+      <button type="button">Edellinen peli</button>
+      <span>Ryhmä 7 • TIK 25 KM</span>
+      <button type="button">Seuraava peli</button>
+    </nav>
+  </footer>
+</body>
+</html>
