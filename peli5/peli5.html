@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Palapeli</title>
+    <link rel="stylesheet" href="./peli5.css">
+    <script src="./peli5.js"></script>
+</head>
+<body>
+    <header class="site-header" role="banner">
+    <div>
+      <span class="site-title">Kasvatusmato</span>
+    </div>
+    <nav class="main-nav" aria-label="Päävalikko">
+        <ul class="nav">
+            <li><a href="info.html">Info</a></li>
+            <li><a href="peli1.html">Peli 1</a></li>
+            <li><a href="peli2.html">Peli 2</a></li>
+            <li><a href="peli3.html">Peli 3</a></li>
+            <li><a href="peli4.html">Peli 4</a></li>
+            <li><a href="peli5.html">Peli 5</a></li>
+            <li><a href="pisteet.html">Pisteet</a></li>
+        </ul>
+    </nav>
+    </header>
+
+  <div id="board"></div>
+  <h1>Vuorot: <span id="turns">0</span></h1>
+  <h2>Pisteet: <span id="score">10</span>/10</h2>
+
+  <button id="open-instructions" class="button-link">Ohjeet</button> 
+
+  <div id="instructions-modal" class="modal modal--instructions" hidden> 
+      <div class="modal-content"> 
+        <h2>Ohjeet</h2> 
+        <p> Tässä pelissä tavoitteena on laittaa palapelin kuvat oikeaan järjestykseen. Palat vaihtavat paikkaa klikkaamalla. Peli päättyy, kun kaikki palaset ovat oikealla paikalla. Vinkki: seuraa numeroita.</p> 
+          <button id="close-instructions" class="button-link">Sulje</button> 
+      </div> 
+    </div> 
+  
+<div id="win-dialog" class="modal modal--win is-hidden" role="dialog" aria-modal="true" aria-labelledby="win-title">
+  <div class="modal__content" role="document">
+    <h2 id="win-title">Hienoa - ratkaisit palapelin!</h2>
+    <p id="win-message">Voitit pelin.</p>
+
+    <div class="modal__actions">
+      <button id="win-restart" type="button">Aloita uudelleen</button>
+      <button id="win-close" type="button">Sulje</button>
+    </div>
+    </div>
+  </div>
+
+<footer class="site-footer" role="contentinfo">
+    <nav class="footer-nav" aria-label="Sivunvaihto">
+      <a href="peli4.html" class="footer-link">Edellinen peli</a>
+      <span>Ryhmä 7 • TIK 25 KM</span>
+
+    </nav>
+  </footer>
+    
+</body>
+</html>
