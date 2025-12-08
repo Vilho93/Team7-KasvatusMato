@@ -80,7 +80,7 @@ function onTileClick() {
   selectedTile = null;
 
   if (checkWin()) {
-    sessionStorage.setItem('peli5_score', String(score));
+    sessionStorage.setItem('peli5Points', String(score));
     openWinDialog(turns, score);
   }
 }

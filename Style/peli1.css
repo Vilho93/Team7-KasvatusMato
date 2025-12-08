@@ -74,9 +74,12 @@ html, body{
 
 
 .footer-nav {
-    display: flex;
-    justify-content: center;
-  }
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 1em;
+}
+
 
 .footer-link {
   font-size: 1em;

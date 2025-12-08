@@ -154,10 +154,3 @@ cards.forEach(card => {
 });
 
 
-document.getElementById("previousGame").addEventListener("click", () => {
-  window.location.href = "peli2.html";
-});
-
-document.getElementById("nextGame").addEventListener("click", () => {
-  window.location.href = "peli4.html";
-});

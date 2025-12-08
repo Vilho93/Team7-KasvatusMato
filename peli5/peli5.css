@@ -80,6 +80,8 @@ h1, h2 {
   border: 2px solid #027206;
   border-radius: 5px;
   width: 12em;
+  font-family: "Comic Sans MS";
+  font-weight: bold
 }  
 
 footer {
@@ -94,9 +96,11 @@ html, body{
 }
 
 .footer-nav {
-    display: flex;
-    justify-content: center;
-  }
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 1em;
+}
 
 main {
     margin-left: 2em;
@@ -176,7 +180,9 @@ img {
   display: flex;
   gap: .5rem;
   justify-content: flex-end;
+
 }
+
 #win-restart {
   background: #2a9d8f;
   color: #fff;
@@ -195,6 +201,8 @@ img {
   cursor: pointer;
 }
 #win-close:hover { background: #dee2e6; }
+
+
 
 body.modal-open {
   overflow: hidden;

@@ -7,7 +7,7 @@ const peli5Points = Number(sessionStorage.getItem('peli5Points'));
 
 
 document.getElementById("scoreText").textContent =
-  `Sait ${peli1Points} pistettä 1. pelissä, ${peli2Points} pistettä 2. pelissä, ${peli3Points} pistettä 3. pelissä, ${peli4Points} pistettä 4. pelissä ja ${peli5Points} pistettä 5. pelissä.`;
+  `Sait ${peli1Points} pistettä Matikkapelissä, ${peli2Points} pistettä Kuvapeli -pelissä, ${peli3Points} pistettä Muistipelissä, ${peli4Points} pistettä Muotopelissä ja ${peli5Points} pistettä Palapelissä.`;
 
 const wormContainer = document.getElementById("worm");
 

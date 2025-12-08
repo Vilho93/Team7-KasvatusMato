@@ -58,6 +58,6 @@ function endGame() {
     feedback.textContent = '';
   finalScoreElement.textContent = score;
   scoreboard.classList.remove ("hidden");
+  sessionStorage.setItem("peli2Points", score);
 }
-sessionStorage.setItem("peli2Points", score);
 
