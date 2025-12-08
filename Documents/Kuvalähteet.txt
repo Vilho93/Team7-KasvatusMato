@@ -1,1 +1,1 @@
-#S Peli2.html kuvat ovat tuotettu Samsung Piirtoavustaja tekoälyllä Versio 1.1.48.16#
+# Peli2.html kuvat ovat tuotettu Samsung Piirtoavustaja tekoälyllä Versio 1.1.48.16#
