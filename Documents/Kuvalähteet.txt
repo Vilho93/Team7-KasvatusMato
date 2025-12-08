@@ -1,9 +1,0 @@
-Matikkapeli: Pelissä ei ole kuvatiedostoja ollenkaan, vaan siinä on käytetty unicode merkkejä, joita käsitellään kuten tekstiä.
-
-Kuvapeli: Kuvat on tehty Galaxy AI:lla / generative edit.
-
-Muistipeli: Kuvat on tehty itse Paintilla ja numeroissa on käytetty Calibri-fonttia.
-
-Muotopeli: Kuvat on tehty itse Paintilla.
-
-Palapeli: Kuvat on tehty itse Canvalla.

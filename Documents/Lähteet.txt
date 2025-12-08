@@ -1,0 +1,24 @@
+Kuvien lähteet:
+
+Matikkapeli: Pelissä ei ole kuvatiedostoja ollenkaan, vaan siinä on käytetty unicode merkkejä, joita käsitellään kuten tekstiä.
+
+Kuvapeli: Kuvat on tehty Galaxy AI:lla / generative edit.
+
+Muistipeli: Kuvat on tehty itse Paintilla ja numeroissa on käytetty Calibri-fonttia.
+
+Muotopeli: Kuvat on tehty itse Paintilla.
+
+Palapeli: Kuvat on tehty itse Canvalla.
+
+
+Pelien lähteet:
+
+Palapelin (peli 5) toteutuksessa on hyödynnetty seuraavia ohjevideoita palapelin tekemiseen: 
+
+https://www.youtube.com/watch?v=BORmIIrMmnE&list=PLLdxFWdIdf8FlGSBSL3QAvEVawVQW-slG 
+
+https://www.youtube.com/watch?v=S6GNtMGNcUE&list=PLLdxFWdIdf8FlGSBSL3QAvEVawVQW-slG&index=2 
+
+https://www.youtube.com/watch?v=sD3Os4H_EOU&list=PLLdxFWdIdf8FlGSBSL3QAvEVawVQW-slG&index=3 
+
+Näiden videoiden pohjalta palapeli on muokattu klikkauspohjaiseksi ja tehty yhtenäiseksi muun sivuston kanssa. Prosessissa on hyödynnetty Microsoft Copilot -tekoälyä esimerkiksi ongelmien ratkaisuun, drag and drop –logiikan muuttamiseen klikkauksiin ja muiden toiminnallisuuksien luomisen apuna. Tekoälyn antamaa koodia ei ole käytetty suoraan osana pelin toteutusta.  
