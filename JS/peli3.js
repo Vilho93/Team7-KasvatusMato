@@ -144,7 +144,7 @@ function flipCard(event) {
 
     sessionStorage.setItem('peli3Points', points)
 
-    results.textContent = `Voitit pelin ajassa ${minutes}:${seconds.toString().padStart(2, "0")} ja sait ${points} pistettä!`;
+  
   }
 
 }
