@@ -84,7 +84,7 @@ main {
     width: 200px;
     height: auto; 
     display: block;
-    margin: 40px 15px;
+    margin: 40px auto;
 }
 .hidden {
   display: none;
