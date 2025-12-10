@@ -13,6 +13,13 @@ Palapeli: Kuvat on tehty itse Canvalla.
 
 Pelien lähteet:
 
+Muistipelin (peli 5) alussa on otettu mallia Web-ohjelmointi -kurssin tehtävästä, jossa käännettiin pelikortteja kortteja klikkaamalla.
+Peli on sen jälkeen rakennettu ominaisuus ominaisuudelta lisäten, niin että eri logiikoiden toteutukseen on haettu apua ja tietoa Googlesta ja Copilot-tekoälyltä.
+Tekoälyn tuottamaa koodia ei ole suoraan kopioitu työhön, vaan sitä on muokattu ja sovellettu tähän projektiin. Tekoälyä on käytetty myös etsimään syitä, miksi jokin toiminnallisuus koodissa ei ole toiminut halutulla tavalla, oli kyse sitten syntaksivirheestä tai koodin logiikan toimimisesta eri tavalla, kuin mitä yritin toteuttaa.
+Pisteet-sivun logiikassa on käytetty Googlea ja Copilotia samalla tavalla kuin muistipelissä.
+
+
+
 Palapelin (peli 5) toteutuksessa on hyödynnetty seuraavia ohjevideoita palapelin tekemiseen: 
 
 https://www.youtube.com/watch?v=BORmIIrMmnE&list=PLLdxFWdIdf8FlGSBSL3QAvEVawVQW-slG 
@@ -22,3 +29,5 @@ https://www.youtube.com/watch?v=S6GNtMGNcUE&list=PLLdxFWdIdf8FlGSBSL3QAvEVawVQW-
 https://www.youtube.com/watch?v=sD3Os4H_EOU&list=PLLdxFWdIdf8FlGSBSL3QAvEVawVQW-slG&index=3 
 
 Näiden videoiden pohjalta palapeli on muokattu klikkauspohjaiseksi ja tehty yhtenäiseksi muun sivuston kanssa. Prosessissa on hyödynnetty Microsoft Copilot -tekoälyä esimerkiksi ongelmien ratkaisuun, drag and drop –logiikan muuttamiseen klikkauksiin ja muiden toiminnallisuuksien luomisen apuna. Tekoälyn antamaa koodia ei ole käytetty suoraan osana pelin toteutusta.  
+
+
