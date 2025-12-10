@@ -1,3 +1,4 @@
+
 const shapes = [
     { name: "Ympyrä", file: "ympyrä.png" },
     { name: "Neliö", file: "neliö.png" },
@@ -5,21 +6,38 @@ const shapes = [
     { name: "Suorakulmio", file: "suorakulmio.png" },
     { name: "Tähti", file: "tähti.png" },
     { name: "Sydän", file: "sydän.png" },
-    { name: "Pentagoni", file: "pentagoni.png" },
-    { name: "Silmukka", file: "silmukka.png" }
+    { name: "Viisikulmio", file: "Viisikulmio.png" },
+    { name: "Soikio", file: "Soikio.png" }
 ];
+const shapeOrder = [...shapes].sort(() => Math.random() - 0.5);
 
 let score = 0, currentShape = null, gameActive = true;
+let roundsPlayed = 0;
+const MAX_ROUNDS = shapes.length; //8 kertaa pelattu
 
 function loadNewShape() {
+
+    if (roundsPlayed >= MAX_ROUNDS) {
+        endGame();
+        return;
+    }
+
     gameActive = true;
-    currentShape = shapes[Math.floor(Math.random() * shapes.length)];
+
+    // yksi muoto per kerros per kierros
+    currentShape = shapeOrder[roundsPlayed];
+    roundsPlayed++;
+
     document.getElementById("shape-name").textContent = currentShape.name;
     document.getElementById("message").textContent = "";
     document.getElementById("message").className = "message";
     document.getElementById("next-btn").style.display = "none";
     
-    const wrongShapes = shapes.filter(s => s.name !== currentShape.name).sort(() => Math.random() - 0.5).slice(0, 3);
+    const wrongShapes = shapes
+        .filter(s => s.name !== currentShape.name)
+        .sort(() => Math.random() - 0.5)
+        .slice(0, 3);
+
     const allShapes = [currentShape, ...wrongShapes].sort(() => Math.random() - 0.5);
     
     const container = document.getElementById("shapes-container");
@@ -33,6 +51,7 @@ function loadNewShape() {
         container.appendChild(img);
     });
 }
+
 
 function checkAnswer(selectedName, imgElement) {
     if (!gameActive) return;
@@ -61,6 +80,27 @@ function checkAnswer(selectedName, imgElement) {
         img.onclick = null;
     });
     document.getElementById("next-btn").style.display = "block";
+}
+
+function endGame() {
+    gameActive = false;
+
+    const messageEl = document.getElementById("message");
+    messageEl.textContent = `Peli loppui! Sait ${score} / ${MAX_ROUNDS} pistettä.`;
+    messageEl.className = "message final";
+
+    // Estetään klikkaukset
+    const allImages = document.querySelectorAll(".shape-img");
+    allImages.forEach(img => {
+        img.classList.add("disabled");
+        img.onclick = null;
+    });
+
+    // Piilotetaan "Seuraava" -nappi
+    document.getElementById("next-btn").style.display = "none";
+
+    // Tallennetaan lopullinen pistemäärä pisteet-sivua varten
+    sessionStorage.setItem('peli4Points', score);
 }
 
 document.getElementById("next-btn").onclick = loadNewShape;
