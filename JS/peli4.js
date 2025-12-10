@@ -5,8 +5,8 @@ const shapes = [
     { name: "Suorakulmio", file: "suorakulmio.png" },
     { name: "Tähti", file: "tähti.png" },
     { name: "Sydän", file: "sydän.png" },
-    { name: "Pentagoni", file: "pentagoni.png" },
-    { name: "Silmukka", file: "silmukka.png" }
+    { name: "Viisikulmio", file: "Viisikulmio.png" },
+    { name: "Soikio", file: "Soikio.png" }
 ];
 
 let score = 0, currentShape = null, gameActive = true;
