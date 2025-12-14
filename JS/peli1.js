@@ -1,4 +1,4 @@
-
+// koodeissa käytetty lähteinä joitain aiemmalla web-ohjelmointi kurssilla tehtyjä koodeja, w3 schoolin esimerkkejä, sekä joissain toiminnoissa apuna Chat GPT:tä.
 const totalRounds = 10;
 let currentRound = 0;
 let correctNumberForRound = 0;
